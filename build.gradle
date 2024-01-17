@@ -1,0 +1,19 @@
+plugins {
+    id 'java-library'
+    id 'org.springframework.boot' version '3.2.1'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation platform('org.finos.symphony.bdk:symphony-bdk-bom:3.0.0.RC6')
+    implementation 'org.finos.symphony.bdk:symphony-bdk-core-spring-boot-starter'
+    compileOnly 'org.springframework.boot:spring-boot-starter'
+}
+
+
+jar { enabled = false }
+
+version = '0.0.1-SNAPSHOT'

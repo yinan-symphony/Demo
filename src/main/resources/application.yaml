@@ -1,0 +1,19 @@
+bdk:
+  host: deepthi-test.on.uat.symphony.com
+
+  bot:
+    username: datahoseBot
+    privateKey:
+      path: src/main/resources/privatekey.pem
+
+  datafeed:
+    enabled: false
+  datahose:
+    enabled: true
+    tag: fancyTag # optional tag that will be used when creating or reusing a datahose feed
+    eventTypes: # mandatory field, events you want to receive
+      - MESSAGESENT
+
+logging:
+  level:
+    com.symphony: debug
