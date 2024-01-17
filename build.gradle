@@ -10,7 +10,10 @@ repositories {
 dependencies {
     implementation platform('org.finos.symphony.bdk:symphony-bdk-bom:3.0.0.RC6')
     implementation 'org.finos.symphony.bdk:symphony-bdk-core-spring-boot-starter'
-    compileOnly 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.slf4j:slf4j-api:2.0.9'
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
 }
 
 

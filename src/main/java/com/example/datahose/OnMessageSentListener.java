@@ -7,10 +7,12 @@ import com.symphony.bdk.gen.api.model.V4Initiator;
 import com.symphony.bdk.gen.api.model.V4MessageSent;
 import com.symphony.bdk.template.api.Template;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+@Slf4j
 public class OnMessageSentListener implements RealTimeEventListener {
   private final MessageService messageService;
   private final Template template;
@@ -23,7 +25,6 @@ public class OnMessageSentListener implements RealTimeEventListener {
 
   @Override
   public void onMessageSent(V4Initiator initiator, V4MessageSent event) throws EventException {
-    System.out.println(String.format("received message - %s from %s", event.getMessage().getMessage(),
-        initiator.getUser().getDisplayName()));
+    log.info("received message - {} from {}", event.getMessage().getMessage(), initiator.getUser().getDisplayName());
   }
 }
